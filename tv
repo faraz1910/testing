@@ -1,0 +1,47 @@
+package MCA1003;
+
+public class TV {
+
+    private int channel = 1;
+    private int volume = 1;
+    boolean on = false;
+
+    TV(){}
+
+    void turnOn(){
+        this.on = true;
+    }
+    void turnOff(){
+        this.on = false;
+    }
+    void setChannel(int newChannel){
+        if(on && newChannel >= 1 && newChannel <=120){
+            this.channel = newChannel;
+        }
+    }
+    void setVolume(int new_volume){
+        if(on && new_volume >= 1 && new_volume <= 7) {
+            this.volume = new_volume;
+        }
+    }
+    void channelUp(){
+        if(on && channel < 120){
+            channel++;
+        }
+    }
+    void channelDown(){
+        if(on && channel > 1) {
+            channel--;
+        }
+    }
+    void volumeUp(){
+        if(on && volume < 7){
+            volume++;
+        }
+    }
+    void volumeDown(){
+        if(on && volume > 1){
+            volume--;
+        }
+    }
+}
