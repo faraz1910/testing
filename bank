@@ -1,0 +1,41 @@
+package MCA1003;
+
+public class BankAccount {
+    private int account_number;
+    private String account_holder_name;
+    private double balance = 0.0;
+
+    BankAccount(){}
+
+    BankAccount(int acc_no, String name) {
+        this.account_holder_name = name;
+        this.account_number = acc_no;
+    }
+
+    BankAccount(int acc_no, String name, double bal) {
+        this.account_holder_name = name;
+        this.account_number = acc_no;
+        this.balance = bal;
+    }
+
+    void createAccount(int acc_no, String name) {
+        this.account_holder_name = name;
+        this.account_number = acc_no;
+    }
+
+    void deposit(double dep_amount) {
+        if(this.account_number != 0) {
+            balance += dep_amount;
+        }
+    }
+
+    void withdrawal(double wid_amount) {
+        if(this.account_number != 0 && balance >= wid_amount) balance -= wid_amount;
+    }
+
+    void check_bal() {
+        if(this.account_number != 0){
+            System.out.println("Current Balance : " + balance);
+        }
+    }
+}
